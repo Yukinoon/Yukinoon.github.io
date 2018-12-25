@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yukinoon&#39; s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.Yukinoon.com/blog/"/>
+  <updated>2018-12-25T14:54:15.311Z</updated>
+  <id>http://www.Yukinoon.com/blog/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot与Web开发</title>
+    <link href="http://www.Yukinoon.com/blog/2018/12/25/SpringBoot%E4%B8%8EWeb%E5%BC%80%E5%8F%91/"/>
+    <id>http://www.Yukinoon.com/blog/2018/12/25/SpringBoot与Web开发/</id>
+    <published>2018-12-25T13:39:15.000Z</published>
+    <updated>2018-12-25T14:54:15.311Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Web开发&quot;&gt;&lt;a href=&quot;#Web开发&quot; class=&quot;headerlink&quot; title=&quot;Web开发&quot;&gt;&lt;/a&gt;Web开发&lt;/h1&gt;&lt;p&gt;使用SpringBoot：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1）、创建SpringBoot应用，选中我们需要的模块&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3）、自己编写业务代码&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-起步&quot;&gt;&lt;a href=&quot;#1-起步&quot; class=&quot;headerlink&quot; title=&quot;1 起步&quot;&gt;&lt;/a&gt;1 起步&lt;/h2&gt;&lt;h3 id=&quot;1-1-SpringBoot对静态资源的映射规则&quot;&gt;&lt;a href=&quot;#1-1-SpringBoot对静态资源的映射规则&quot; class=&quot;headerlink&quot; title=&quot;1.1 SpringBoot对静态资源的映射规则&quot;&gt;&lt;/a&gt;1.1 SpringBoot对静态资源的映射规则&lt;/h3&gt;&lt;figure class=&quot;hljs highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-meta&quot;&gt;@ConfigurationProperties&lt;/span&gt;(&lt;br&gt;    prefix = &lt;span class=&quot;hljs-string&quot;&gt;&quot;spring.resources&quot;&lt;/span&gt;,&lt;br&gt;    ignoreUnknownFields = &lt;span class=&quot;hljs-keyword&quot;&gt;false&lt;/span&gt;&lt;br&gt;)&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ResourceProperties&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ResourceLoaderAware&lt;/span&gt;, &lt;span class=&quot;hljs-title&quot;&gt;InitializingBean&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;//可以设置与静态资源有关的参数，缓存时间等&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot与日志</title>
+    <link href="http://www.Yukinoon.com/blog/2018/12/20/SpringBoot%E4%B8%8E%E6%97%A5%E5%BF%97/"/>
+    <id>http://www.Yukinoon.com/blog/2018/12/20/SpringBoot与日志/</id>
+    <published>2018-12-20T13:29:10.000Z</published>
+    <updated>2018-12-25T13:37:25.297Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SpringBoot与日志&quot;&gt;&lt;a href=&quot;#SpringBoot与日志&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot与日志&quot;&gt;&lt;/a&gt;SpringBoot与日志&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;1-SLF4j使用&quot;&gt;&lt;a href=&quot;#1-SLF4j使用&quot; class=&quot;headerlink&quot; title=&quot;1.SLF4j使用&quot;&gt;&lt;/a&gt;1.SLF4j使用&lt;/h2&gt;&lt;h3 id=&quot;1-1-如何在系统中使用SLF4j&quot;&gt;&lt;a href=&quot;#1-1-如何在系统中使用SLF4j&quot; class=&quot;headerlink&quot; title=&quot;1.1 如何在系统中使用SLF4j&quot;&gt;&lt;/a&gt;1.1 如何在系统中使用SLF4j&lt;/h3&gt;&lt;p&gt;以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层的方法；&lt;/p&gt;
+&lt;p&gt;给系统导入slf4j的jar和logback的实现jar&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; org.slf4j.Logger;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; org.slf4j.LoggerFactory;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;HelloWorld&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;  &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    Logger logger = LoggerFactory.getLogger(HelloWorld.class);&lt;br&gt;    logger.info(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;);&lt;br&gt;  &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot配置文件</title>
+    <link href="http://www.Yukinoon.com/blog/2018/12/16/SpringBoot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://www.Yukinoon.com/blog/2018/12/16/SpringBoot配置文件/</id>
+    <published>2018-12-16T15:05:23.000Z</published>
+    <updated>2018-12-23T04:13:32.554Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;4-SpringBoot的配置&quot;&gt;&lt;a href=&quot;#4-SpringBoot的配置&quot; class=&quot;headerlink&quot; title=&quot;4 SpringBoot的配置&quot;&gt;&lt;/a&gt;4 SpringBoot的配置&lt;/h2&gt;&lt;h3 id=&quot;4-1-配置文件&quot;&gt;&lt;a href=&quot;#4-1-配置文件&quot; class=&quot;headerlink&quot; title=&quot;4.1.配置文件&quot;&gt;&lt;/a&gt;4.1.配置文件&lt;/h3&gt;&lt;p&gt;Springboot使用一个全局配置文件，配置文件名字是固定的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;application.properties&lt;/li&gt;
+&lt;li&gt;application.yml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;配置文件的作用：修改SpringBoot自动配置的默认值；&lt;/p&gt;
+&lt;h3 id=&quot;4-2-yml语法&quot;&gt;&lt;a href=&quot;#4-2-yml语法&quot; class=&quot;headerlink&quot; title=&quot;4.2 yml语法&quot;&gt;&lt;/a&gt;4.2 yml语法&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;基本语法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;k:(空格)v    表示一对键值对（空格必须有）；&lt;/p&gt;
+&lt;p&gt;​    以空格缩进来控制层级关系；只要是左对齐的一列数据都是同一层级的&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs yml&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;sercer:&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-attr&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;8081&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-attr&quot;&gt;path:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/hello&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;属性和值也是大小写敏感；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;值的写法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;字面量：普通的值（数字，字符串，布尔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​    k: v    字面量直接来写，默认不用加单引号或者双引号；&lt;/p&gt;
+&lt;p&gt;​    “”：双引号；不会转义字符串里的特殊字符；特殊字符作为本身想表示的意思&lt;/p&gt;
+&lt;p&gt;​        name: “张三 \n lisi”    输出为：zhangsan 换行 lisi&lt;/p&gt;
+&lt;p&gt;​    ‘’：单引号；会转义特殊字符，特殊字符最终只是一个普通的字符串&lt;/p&gt;
+&lt;p&gt;​        name: ‘张三 \n lisi’    输出为：zhangsan \n lisi&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;对象（属性和值）（键值对）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​    k: v     在下一行写来写对象属性和值的关系&lt;/p&gt;
+&lt;p&gt;​        对象还是k: v的方式&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs yaml&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;friends:&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-attr&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;zhangsan&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-attr&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;行内写法：&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs yaml&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;friends:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&amp;#123;name:&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;zhangsan,age:&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习</title>
+    <link href="http://www.Yukinoon.com/blog/2018/12/12/SpringBoot%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://www.Yukinoon.com/blog/2018/12/12/SpringBoot学习/</id>
+    <published>2018-12-12T12:04:26.000Z</published>
+    <updated>2018-12-23T04:13:23.375Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SpringBoot学习笔记&quot;&gt;&lt;a href=&quot;#SpringBoot学习笔记&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot学习笔记&quot;&gt;&lt;/a&gt;SpringBoot学习笔记&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;1-配置&quot;&gt;&lt;a href=&quot;#1-配置&quot; class=&quot;headerlink&quot; title=&quot;1 配置&quot;&gt;&lt;/a&gt;1 配置&lt;/h2&gt;&lt;h3 id=&quot;1-1-配置maven&quot;&gt;&lt;a href=&quot;#1-1-配置maven&quot; class=&quot;headerlink&quot; title=&quot;1.1 配置maven&quot;&gt;&lt;/a&gt;1.1 配置maven&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;给maven的setting.xml加上以下&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;profile&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;jdk-1.8&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;id&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;activation&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;      	&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;activeByDefault&lt;/span&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;activeByDefault&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;jdk&lt;/span&gt;&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;jdk&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;activation&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;repositories&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.source&lt;/span&gt;&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.source&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.target&lt;/span&gt;&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.target&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.compilerVersion&lt;/span&gt;&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;maven.compiler.compilerVersion&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;repositories&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;profile&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2-SpringBoot-HelloWorld&quot;&gt;&lt;a href=&quot;#2-SpringBoot-HelloWorld&quot; class=&quot;headerlink&quot; title=&quot;2 SpringBoot HelloWorld&quot;&gt;&lt;/a&gt;2 SpringBoot HelloWorld&lt;/h2&gt;&lt;h3 id=&quot;2-1-创建maven工程；（jar）&quot;&gt;&lt;a href=&quot;#2-1-创建maven工程；（jar）&quot; class=&quot;headerlink&quot; title=&quot;2.1 创建maven工程；（jar）&quot;&gt;&lt;/a&gt;2.1 创建maven工程；（jar）&lt;/h3&gt;&lt;h3 id=&quot;2-2-导入SpringBoot相关依赖&quot;&gt;&lt;a href=&quot;#2-2-导入SpringBoot相关依赖&quot; class=&quot;headerlink&quot; title=&quot;2.2 导入SpringBoot相关依赖&quot;&gt;&lt;/a&gt;2.2 导入SpringBoot相关依赖&lt;/h3&gt;&lt;figure class=&quot;hljs highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;parent&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-starter-parent&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.5.9.RELEASE&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;parent&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;            &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;            &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-starter-web&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-3-编写一个主程序&quot;&gt;&lt;a href=&quot;#2-3-编写一个主程序&quot; class=&quot;headerlink&quot; title=&quot;2.3 编写一个主程序&quot;&gt;&lt;/a&gt;2.3 编写一个主程序&lt;/h3&gt;&lt;figure class=&quot;hljs highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; org.springframework.boot.SpringApplication;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; org.springframework.boot.autoconfigure.SpringBootApplication;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-comment&quot;&gt;/**&lt;br&gt; *  &lt;span class=&quot;hljs-doctag&quot;&gt;@SpringBootApplication&lt;/span&gt; 来标注一个主程序类，来说明这是一个SpringBoot应用&lt;br&gt; */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-meta&quot;&gt;@SpringBootApplication&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;HelloWorldMainApplication&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;    &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;        &lt;span class=&quot;hljs-comment&quot;&gt;//启动应用&lt;/span&gt;&lt;br&gt;        SpringApplication.run(HelloWorldMainApplication.class,args);&lt;br&gt;    &amp;#125;&lt;br&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="http://www.Yukinoon.com/blog/2018/12/11/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://www.Yukinoon.com/blog/2018/12/11/Markdown语法/</id>
+    <published>2018-12-11T11:39:16.000Z</published>
+    <updated>2018-12-23T04:13:08.706Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h5 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.标题&quot;&gt;&lt;/a&gt;1.标题&lt;/h5&gt;&lt;p&gt;​    类似于html中的&lt;code&gt;&amp;lt;h1&lt;/code&gt;到&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;标签，要想把一段文字定义为标题，只需在前面加上若干的#号即可。&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs markdown&quot;&gt;&lt;span class=&quot;hljs-section&quot;&gt;# h1&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;## h2&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;hljs-section&quot;&gt;### h3&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;2-区块&quot;&gt;&lt;a href=&quot;#2-区块&quot; class=&quot;headerlink&quot; title=&quot;2.区块&quot;&gt;&lt;/a&gt;2.区块&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;区块&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;区块2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;hljs highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs markdown&quot;&gt;&lt;span class=&quot;hljs-quote&quot;&gt;&amp;gt; 区块&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-quote&quot;&gt;&amp;gt; 区块2&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
