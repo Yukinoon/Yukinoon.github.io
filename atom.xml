@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.Yukinoon.com/blog/"/>
-  <updated>2018-12-25T14:54:15.311Z</updated>
+  <updated>2018-12-27T14:08:35.917Z</updated>
   <id>http://www.Yukinoon.com/blog/</id>
   
   <author>
@@ -21,11 +21,12 @@
     <link href="http://www.Yukinoon.com/blog/2018/12/25/SpringBoot%E4%B8%8EWeb%E5%BC%80%E5%8F%91/"/>
     <id>http://www.Yukinoon.com/blog/2018/12/25/SpringBoot与Web开发/</id>
     <published>2018-12-25T13:39:15.000Z</published>
-    <updated>2018-12-25T14:54:15.311Z</updated>
+    <updated>2018-12-27T14:08:35.917Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Web开发&quot;&gt;&lt;a href=&quot;#Web开发&quot; class=&quot;headerlink&quot; title=&quot;Web开发&quot;&gt;&lt;/a&gt;Web开发&lt;/h1&gt;&lt;p&gt;使用SpringBoot：&lt;/p&gt;
+      &lt;h1 id=&quot;Web开发&quot;&gt;&lt;a href=&quot;#Web开发&quot; class=&quot;headerlink&quot; title=&quot;Web开发&quot;&gt;&lt;/a&gt;Web开发&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;使用SpringBoot：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1）、创建SpringBoot应用，选中我们需要的模块&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2）、SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3）、自己编写业务代码&lt;/strong&gt;&lt;/p&gt;
