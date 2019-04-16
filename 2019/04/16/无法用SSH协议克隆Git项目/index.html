@@ -81,7 +81,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | Yukinoon' s Blog</title>
+    <title> | Yukinoon' s Blog</title>
   </head>
   <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -104,7 +104,7 @@
         
         <li role="menuitem"><a href="/">首页</a></li>
         
-        <li role="menuitem"><a href="/archives/" class="current">归档</a></li>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
         <li role="menuitem"><a href="/categories/">分类</a></li>
         
@@ -123,149 +123,67 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive page">
-  <h1 class="page-title">归档</h1>
-  <h2 class="page-counter">
-    
-    你已经写了 9 篇文章！
-    
-  </h2>
-  
-  
-  
-  
-  <h2 class="page-title">2019
+<div id="post" class="page">
   
   <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/16/SpringCloud学习笔记二/" itemprop="url"></a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-16T10:11:04+08:00">04-16</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2019/04/16/无法用SSH协议克隆Git项目/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="John Doe">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="Yukinoon' s Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline"></h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-16T10:11:04+08:00">2019-04-16 10:11:04</time></span>
+        </span>
+        
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>1.删除.SSH文件下的known_hosts(.SSH在C:\Users\Windows用户名目录下)</p>
+<p>2.生成ssh公钥认证所需的公钥和私钥文件</p>
+<p>ssh-keygen -t rsa -C “你的名字/你的邮箱”</p>
+<p>然后会出现以下内容</p>
+<p>Generating public/private rsa key pair.<br>Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):<br>/c/Users/Administrator/.ssh/id_rsa already exists.<br>Overwrite (y/n)? y（输入y）<br>Enter passphrase (empty for no passphrase):（回车）</p>
+<p>Enter same passphrase again:（回车）</p>
+<h2 id="然后系统会自动在-ssh文件夹下生成两个文件，id-rsa和id-rsa-pub，用记事本打开id-rsa-pub，将里面的内容复制到下面这里（GitHub-的Setting下的SSH-and-GPGkeys），然后点击New-SSH-key，然后输入ssh-T-git-github-com验证与github连接是否成功时"><a href="#然后系统会自动在-ssh文件夹下生成两个文件，id-rsa和id-rsa-pub，用记事本打开id-rsa-pub，将里面的内容复制到下面这里（GitHub-的Setting下的SSH-and-GPGkeys），然后点击New-SSH-key，然后输入ssh-T-git-github-com验证与github连接是否成功时" class="headerlink" title="然后系统会自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub，将里面的内容复制到下面这里（GitHub 的Setting下的SSH and GPGkeys），然后点击New SSH key，然后输入ssh -T git@github.com验证与github连接是否成功时"></a>然后系统会自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub，将里面的内容复制到下面这里（GitHub 的Setting下的SSH and GPGkeys），然后点击New SSH key，然后输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>验证与github连接是否成功时</h2><p>The authenticity of host ‘github.com (13.250.177.223)’ can’t be established.<br>RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.<br>Are you sure you want to continue connecting (yes/no)? yes（输入yes）<br>Warning: Permanently added ‘github.com,13.250.177.223’ (RSA) to the list of known hosts.</p>
+<p>Hi XXX! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<h2 id="最后再试着拉取一下项目，就成了。。"><a href="#最后再试着拉取一下项目，就成了。。" class="headerlink" title="最后再试着拉取一下项目，就成了。。"></a>最后再试着拉取一下项目，就成了。。</h2><p>若出现连接超时，首先找到git的安装目录，找到/etc/ssh/ssh_config文件，用notepad++打开这个文件，把如下内容复制到ssh_config文件的末尾处：并记得保存</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Host github.com<br>User git<br>Hostname ssh.github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa<br>Port 443<br></code></pre></td></tr></table></figure>
+<p>再使用：ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>来测试git是否成功连接github，完事。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
   </article>
   
   
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/16/SpringCloud学习笔记/" itemprop="url"></a>
-      </h1>
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-16T10:11:04+08:00">04-16</time>
-      </span>
+      <a href="/2019/03/08/小知识点/" rel="next" title="小知识点"><i class="fas fa-angle-left"></i><span class="nav-title">小知识点</span></a>
       
-    </header>
-  </article>
-  
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/04/16/无法用SSH协议克隆Git项目/" itemprop="url"></a>
-      </h1>
+    </div>
+    <div class="page-nav-prev page-nav-item">
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-16T10:11:04+08:00">04-16</time>
-      </span>
+      <a href="/2019/04/16/SpringCloud学习笔记/" rel="prev" title=""><span class="nav-title"></span><i class="fas fa-angle-right"></i></a>
       
-    </header>
-  </article>
+    </div>
+  </nav>
   
   
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/03/08/小知识点/" itemprop="url">小知识点</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-08T11:23:14+08:00">03-08</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  
-  <h2 class="page-title">2018
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/25/SpringBoot与Web开发/" itemprop="url">SpringBoot与Web开发</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-25T21:39:15+08:00">12-25</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/20/SpringBoot与日志/" itemprop="url">SpringBoot与日志</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-20T21:29:10+08:00">12-20</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/16/SpringBoot配置文件/" itemprop="url">SpringBoot配置文件</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-16T23:05:23+08:00">12-16</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/12/SpringBoot学习/" itemprop="url">SpringBoot学习</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-12T20:04:26+08:00">12-12</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/11/Markdown语法/" itemprop="url">Markdown语法</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-11T19:39:16+08:00">12-11</time>
-      </span>
-      
-    </header>
-  </article>
-  
-  
-</h2></h2></div>
+</div>
 
           </div>
           
@@ -322,6 +240,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#然后系统会自动在-ssh文件夹下生成两个文件，id-rsa和id-rsa-pub，用记事本打开id-rsa-pub，将里面的内容复制到下面这里（GitHub-的Setting下的SSH-and-GPGkeys），然后点击New-SSH-key，然后输入ssh-T-git-github-com验证与github连接是否成功时"><span class="toc-text">然后系统会自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub，将里面的内容复制到下面这里（GitHub 的Setting下的SSH and GPGkeys），然后点击New SSH key，然后输入ssh -T git@github.com验证与github连接是否成功时</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#最后再试着拉取一下项目，就成了。。"><span class="toc-text">最后再试着拉取一下项目，就成了。。</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>
