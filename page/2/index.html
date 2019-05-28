@@ -128,6 +128,148 @@
   
   <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2018/12/20/SpringBoot与日志/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="John Doe">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Yukinoon' s Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/12/20/SpringBoot与日志/" itemprop="url">SpringBoot与日志</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-20T21:29:10+08:00">2018-12-20 21:29:10</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="SpringBoot与日志"><a href="#SpringBoot与日志" class="headerlink" title="SpringBoot与日志"></a>SpringBoot与日志</h1><p>[TOC]</p>
+<h2 id="1-SLF4j使用"><a href="#1-SLF4j使用" class="headerlink" title="1.SLF4j使用"></a>1.SLF4j使用</h2><h3 id="1-1-如何在系统中使用SLF4j"><a href="#1-1-如何在系统中使用SLF4j" class="headerlink" title="1.1 如何在系统中使用SLF4j"></a>1.1 如何在系统中使用SLF4j</h3><p>以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层的方法；</p>
+<p>给系统导入slf4j的jar和logback的实现jar</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.slf4j.Logger;<br><span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    Logger logger = LoggerFactory.getLogger(HelloWorld.class);<br>    logger.info(<span class="hljs-string">"Hello World"</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2018/12/16/SpringBoot配置文件/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="John Doe">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Yukinoon' s Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/12/16/SpringBoot配置文件/" itemprop="url">SpringBoot配置文件</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-16T23:05:23+08:00">2018-12-16 23:05:23</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>[TOC]</p>
+<h2 id="4-SpringBoot的配置"><a href="#4-SpringBoot的配置" class="headerlink" title="4 SpringBoot的配置"></a>4 SpringBoot的配置</h2><h3 id="4-1-配置文件"><a href="#4-1-配置文件" class="headerlink" title="4.1.配置文件"></a>4.1.配置文件</h3><p>Springboot使用一个全局配置文件，配置文件名字是固定的</p>
+<ul>
+<li>application.properties</li>
+<li>application.yml</li>
+</ul>
+<p>配置文件的作用：修改SpringBoot自动配置的默认值；</p>
+<h3 id="4-2-yml语法"><a href="#4-2-yml语法" class="headerlink" title="4.2 yml语法"></a>4.2 yml语法</h3><p><strong>基本语法</strong></p>
+<p>k:(空格)v    表示一对键值对（空格必须有）；</p>
+<p>​    以空格缩进来控制层级关系；只要是左对齐的一列数据都是同一层级的</p>
+<figure class="hljs highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">sercer:</span><br>	<span class="hljs-attr">port:</span> <span class="hljs-number">8081</span><br>	<span class="hljs-attr">path:</span> <span class="hljs-string">/hello</span><br></code></pre></td></tr></table></figure>
+<p>属性和值也是大小写敏感；</p>
+<p><strong>值的写法</strong></p>
+<p><strong>字面量：普通的值（数字，字符串，布尔</strong></p>
+<p>​    k: v    字面量直接来写，默认不用加单引号或者双引号；</p>
+<p>​    “”：双引号；不会转义字符串里的特殊字符；特殊字符作为本身想表示的意思</p>
+<p>​        name: “张三 \n lisi”    输出为：zhangsan 换行 lisi</p>
+<p>​    ‘’：单引号；会转义特殊字符，特殊字符最终只是一个普通的字符串</p>
+<p>​        name: ‘张三 \n lisi’    输出为：zhangsan \n lisi</p>
+<p><strong>对象（属性和值）（键值对）</strong></p>
+<p>​    k: v     在下一行写来写对象属性和值的关系</p>
+<p>​        对象还是k: v的方式</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">friends:</span><br>	<span class="hljs-attr">name:</span> <span class="hljs-string">zhangsan</span><br>	<span class="hljs-attr">age:</span> <span class="hljs-number">20</span><br></code></pre></td></tr></table></figure>
+<p>行内写法：</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">friends:</span> <span class="hljs-string">&#123;name:</span> <span class="hljs-string">zhangsan,age:</span> <span class="hljs-number">20</span><span class="hljs-string">&#125;</span><br></code></pre></td></tr></table></figure>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2018/12/12/SpringBoot学习/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="John Doe">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Yukinoon' s Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/12/12/SpringBoot学习/" itemprop="url">SpringBoot学习</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-12T20:04:26+08:00">2018-12-12 20:04:26</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="SpringBoot学习笔记"><a href="#SpringBoot学习笔记" class="headerlink" title="SpringBoot学习笔记"></a>SpringBoot学习笔记</h1><p>[TOC]</p>
+<h2 id="1-配置"><a href="#1-配置" class="headerlink" title="1 配置"></a>1 配置</h2><h3 id="1-1-配置maven"><a href="#1-1-配置maven" class="headerlink" title="1.1 配置maven"></a>1.1 配置maven</h3><ul>
+<li><p>给maven的setting.xml加上以下</p>
+<figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">profile</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>jdk-1.8<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br><br>      <span class="hljs-tag">&lt;<span class="hljs-name">activation</span>&gt;</span><br>      	<span class="hljs-tag">&lt;<span class="hljs-name">activeByDefault</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">activeByDefault</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">jdk</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">jdk</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">activation</span>&gt;</span><br><br>      <span class="hljs-tag">&lt;<span class="hljs-name">repositories</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.compilerVersion</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">repositories</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">profile</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="2-SpringBoot-HelloWorld"><a href="#2-SpringBoot-HelloWorld" class="headerlink" title="2 SpringBoot HelloWorld"></a>2 SpringBoot HelloWorld</h2><h3 id="2-1-创建maven工程；（jar）"><a href="#2-1-创建maven工程；（jar）" class="headerlink" title="2.1 创建maven工程；（jar）"></a>2.1 创建maven工程；（jar）</h3><h3 id="2-2-导入SpringBoot相关依赖"><a href="#2-2-导入SpringBoot相关依赖" class="headerlink" title="2.2 导入SpringBoot相关依赖"></a>2.2 导入SpringBoot相关依赖</h3><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.5.9.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-3-编写一个主程序"><a href="#2-3-编写一个主程序" class="headerlink" title="2.3 编写一个主程序"></a>2.3 编写一个主程序</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;<br><span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;<br><br><span class="hljs-comment">/**<br> *  <span class="hljs-doctag">@SpringBootApplication</span> 来标注一个主程序类，来说明这是一个SpringBoot应用<br> */</span><br><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorldMainApplication</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><br>        <span class="hljs-comment">//启动应用</span><br>        SpringApplication.run(HelloWorldMainApplication.class,args);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2018/12/11/Markdown语法/">
       <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <meta itemprop="name" content="John Doe">
@@ -203,7 +345,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">11</a></div>
+      <div><a href="/archives/">14</a></div>
     </div>
     
     
