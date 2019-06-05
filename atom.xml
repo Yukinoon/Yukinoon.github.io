@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.Yukinoon.com/blog/"/>
-  <updated>2019-05-28T01:53:36.231Z</updated>
+  <updated>2019-06-05T14:30:29.432Z</updated>
   <id>http://www.Yukinoon.com/blog/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线程池和多线程工具类</title>
+    <link href="http://www.Yukinoon.com/blog/2019/06/05/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>http://www.Yukinoon.com/blog/2019/06/05/线程池和多线程工具类/</id>
+    <published>2019-06-05T14:28:09.000Z</published>
+    <updated>2019-06-05T14:30:29.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;静态内部类普通同步代码块和静态同步方法所公用的锁对象是 类.class&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;多线程&quot;&gt;&lt;a href=&quot;#多线程&quot; class=&quot;headerlink&quot; title=&quot;多线程&quot;&gt;&lt;/a&gt;多线程&lt;/h3&gt;&lt;h4 id=&quot;创建线程的两种传统方式&quot;&gt;&lt;a href=&quot;#创建线程的两种传统方式&quot; class=&quot;headerlink&quot; title=&quot;创建线程的两种传统方式&quot;&gt;&lt;/a&gt;创建线程的两种传统方式&lt;/h4&gt;&lt;p&gt;建议使用第二种，因为第二种更能体现面向对象的思想&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>传统多线程知识点</title>
+    <link href="http://www.Yukinoon.com/blog/2019/06/05/%E4%BC%A0%E7%BB%9F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://www.Yukinoon.com/blog/2019/06/05/传统多线程知识点/</id>
+    <published>2019-06-05T14:27:45.000Z</published>
+    <updated>2019-06-05T14:31:33.594Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;10-传统多线程&quot;&gt;&lt;a href=&quot;#10-传统多线程&quot; class=&quot;headerlink&quot; title=&quot;10. 传统多线程&quot;&gt;&lt;/a&gt;10. 传统多线程&lt;/h2&gt;&lt;h3 id=&quot;10-1-多线程的概述&quot;&gt;&lt;a href=&quot;#10-1-多线程的概述&quot; class=&quot;headerlink&quot; title=&quot;10.1 多线程的概述&quot;&gt;&lt;/a&gt;10.1 多线程的概述&lt;/h3&gt;&lt;p&gt;由于线程是依赖于进程而存在，所以先了解进程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;进程：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;就是正在运行的程序。&lt;/p&gt;
+&lt;p&gt;进程是系统进行资源分配和调用的独立单位，没一个进程都有它自己的内存空间和系统资源。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;多进程的意义：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以在一个时间段内执行多个任务；&lt;/li&gt;
+&lt;li&gt;可以提高CPU的使用率。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>行为型模式</title>

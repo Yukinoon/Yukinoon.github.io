@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Yukinoon' s Blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>传统多线程知识点 | Yukinoon' s Blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">Yukinoon' s Blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+        <li role="menuitem"><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.Yukinoon.com/blog/2019/06/05/传统多线程知识点/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="John Doe">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="Yukinoon' s Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">传统多线程知识点</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-05T22:27:45+08:00">2019-06-05 22:27:45</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>[TOC]</p>
+<h2 id="10-传统多线程"><a href="#10-传统多线程" class="headerlink" title="10. 传统多线程"></a>10. 传统多线程</h2><h3 id="10-1-多线程的概述"><a href="#10-1-多线程的概述" class="headerlink" title="10.1 多线程的概述"></a>10.1 多线程的概述</h3><p>由于线程是依赖于进程而存在，所以先了解进程。</p>
+<ul>
+<li><p><strong>进程：</strong></p>
+<p>就是正在运行的程序。</p>
+<p>进程是系统进行资源分配和调用的独立单位，没一个进程都有它自己的内存空间和系统资源。</p>
+</li>
+<li><p><strong>多进程的意义：</strong></p>
+<ol>
+<li>可以在一个时间段内执行多个任务；</li>
+<li>可以提高CPU的使用率。</li>
+</ol>
+<a id="more"></a>
+</li>
+<li><p><strong>线程：</strong></p>
+<p>同一个进程内又可能包含多个任务，这每一个任务就可以看成是一个线程。</p>
+<p>线程是程序的执行单元/执行路径，是程序使用CPU的基本单位。</p>
+<p>如果程序只有一条执行路径即为单线程，如果程序有多条执行路径即为多线程。</p>
+</li>
+<li><p><strong>多线程的意义：</strong></p>
+<ol>
+<li>提高应用程序的使用率。</li>
+<li>如果一个进程有多个线程，将会有更高的几率获得更多系统资源。</li>
+</ol>
+</li>
+<li><p><strong>并发和并行：</strong></p>
+<ul>
+<li>并发：是指逻辑上同时发生，在某一个时间段内同时运行多个程序。</li>
+<li>并行：是指物理上同时发生，在某一个时间点上同时运行多个程序。</li>
+</ul>
+</li>
+<li><p><strong>相关问题：</strong></p>
+<ul>
+<li><p>Java程序运行时的线程调度：</p>
+<p>java命令会先启动Java虚拟机（JVM），也就是启动了一个程序（启动了一个进程）。该程序会启动一个主线程，然后该线程去调用某个类的main方法。</p>
+</li>
+<li><p>多个进程在单CPU上是同时进行的吗？</p>
+<p>不是，因为单CPU在某一个时间点上只能做一件事情。</p>
+<p>我们感觉到的同时进行，是因为CPU在做着进程间的高效切换。</p>
+</li>
+<li><p>Java虚拟机的启动是单线程的还是多线程的？</p>
+<p>是多线程的。</p>
+<p>因为至少启动了主线程和垃圾回收器线程。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-2-多线程的实现"><a href="#10-2-多线程的实现" class="headerlink" title="10.2 多线程的实现"></a>10.2 多线程的实现</h3><p>由于线程是依赖进程存在的，所以首先应创建一个进程。</p>
+<p>进程是由系统创建的，所以我们需要调用系统功能去创建一个进程。</p>
+<p>Java不能直接调用系统功能，没有办法直接实现多线程程序，不过可以通过调用C/C++写好的程序来实现。</p>
+<p>将C/C++写好的程序功能封装成Java类，就可以实现Java多线程程序了。</p>
+<p>Java提供的线程类是：Thread。</p>
+<ul>
+<li><p><strong>方式一（继承Thread类）：</strong></p>
+<ol>
+<li>自定义类MyThread继承自Thread类；</li>
+<li>MyThread类中重写run()方法；</li>
+<li>创建对象；</li>
+<li>启动线程。</li>
+</ol>
+<p>实例：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-title">extend</span> <span class="hljs-title">Thread</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>        ...				<span class="hljs-comment">//线程中要执行的内容</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        MyThread tr1 = <span class="hljs-keyword">new</span> MyThread();<br>        MyThread tr2 = <span class="hljs-keyword">new</span> MyThread();<br>        <br>        tr1.start();	<span class="hljs-comment">//启动线程</span><br>        tr2.start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式二（实现Runnable）：</strong></p>
+<ol>
+<li>自定义类MyRunnable实现接口Runnable；</li>
+<li>重写run()方法；</li>
+<li>创建MyRunnable类的对象；</li>
+<li>创建Thread类的对象，把创建的MyRunnable对象当成参数传递；</li>
+<li>启动线程。</li>
+</ol>
+<p>实例：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyRunnable</span> <span class="hljs-title">implments</span> <span class="hljs-title">Runnable</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>        ...		<span class="hljs-comment">//线程中要执行的内容</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        MyRunnable mr = <span class="hljs-keyword">new</span> MyRunnable();<br>        <br>        Thread th1 = <span class="hljs-keyword">new</span> Thread(mr, <span class="hljs-string">"线程1"</span>);<br>        Thread th2 = <span class="hljs-keyword">new</span> Thread(mr);<br>        <br>        th1.start();<br>        th2.start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式三（线程池）：</strong></p>
+<p><strong>（仅了解）</strong></p>
+<p>使用ExecutorService（线程池）、Callable和Future实现有返回值的多线程：</p>
+<ol>
+<li>自定义类实现Callable<v>；</v></li>
+<li>重写<v> call()方法，返回值为V；</v></li>
+<li>创建线程池；</li>
+<li>创建Callable<v>实现类对象；</v></li>
+<li>将对象submit到常量池，用Future<v>对象接收；</v></li>
+<li>Future<v>对象调用get()方法得到返回值；</v></li>
+<li>关闭线程池。</li>
+</ol>
+<p>实例：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCallable</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Callable</span>&lt;<span class="hljs-title">Integer</span>&gt;</span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> number;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyCallable</span><span class="hljs-params">(<span class="hljs-keyword">int</span> number)</span></span>&#123;<br>        <span class="hljs-keyword">this</span>.number = number;<br>    &#125;<br>    <span class="hljs-keyword">public</span> &lt;Integer&gt; call() <span class="hljs-keyword">throws</span> Exception&#123;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> x = <span class="hljs-number">1</span>;x &lt;= number;x ++)&#123;<br>            sum += x;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;<br>        ExecutorService pool = Executors.newFixedThreadPool(<span class="hljs-number">2</span>);<br>        <br>        Future&lt;Integer&gt; f1 = pool.submit(<span class="hljs-keyword">new</span> MyCallable(<span class="hljs-number">100</span>));<br>        Future&lt;Integer&gt; f2 = pool.submit(<span class="hljs-keyword">new</span> MyCallable(<span class="hljs-number">200</span>));<br>        <br>        Integer i1 = f1.get();<br>        Integer i2 = f2.get();<br>        <br>        System.out.println(i1);<br>        System.out.println(i2);<br>        <br>        pool.shutdown();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>相关重要问题：</strong></p>
+<ol>
+<li><p><strong>为什么要重写run()方法？</strong></p>
+<p>不是类中所有代码都要被线程执行的。</p>
+<p>为了区分哪些代码需要被线程执行，Java提供了Thread中的run()方法来包含被线程执行的代码。</p>
+</li>
+<li><p><strong>调用run()方法为什么是单线程的呢？</strong></p>
+<p>因为直接调用run()方法就是相当于调用了普通的方法，看到的自然是单线程的效果。</p>
+</li>
+<li><p><strong>run()和start()的区别：</strong></p>
+<ul>
+<li>run()：仅仅是封装需要被线程执行的代码，直接调用仅相当于普通方法调用。</li>
+<li>start()：启动线程，然后Java虚拟机调用该线程的run()方法。</li>
+</ul>
+</li>
+<li><p><strong>线程能不能多次启动？</strong></p>
+<p>不能。</p>
+<p>不过可以创建不同的线程对象分别启动。</p>
+</li>
+<li><p><strong>多线程实现方式二的好处？</strong></p>
+<ol>
+<li>若一个类已经继承了其他类就无法使用方式一了，使用接口可以避免Java单继承带来的局限性；</li>
+<li>方式二可以实现多个相同的线程处理同一份资源。</li>
+<li>把线程同程序的代码、数据有效分离，较好地体现了面向对象的设计思想。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="10-3-Thread类"><a href="#10-3-Thread类" class="headerlink" title="10.3 Thread类"></a>10.3 Thread类</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>Thread是程序中的执行线程。</p>
+</li>
+<li><p><strong>重要构造方法：</strong></p>
+<ul>
+<li><p>public Thread()</p>
+<p>//分配新的Thread对象，自动生成的名称的形式为”Thread-“ + n</p>
+</li>
+<li><p>public Thread(<strong>String name</strong>)</p>
+<p>//使用给定的名称构造新的Thread对象</p>
+</li>
+<li><p>public Thread(<strong>Runable target</strong>)</p>
+<p>//传一个Runnable实现类，构造Thread对象</p>
+</li>
+<li><p>public Thread(<strong>Runable target, String name)</strong></p>
+<p>//传一个Runnable实现类和线程名称，构造Thread对象</p>
+</li>
+<li><p>public Thread(<strong>ThreadGroup tg, Runnable target, String name</strong>)</p>
+<p>//根据线程组，Runnable和名称构建Thread对象</p>
+</li>
+</ul>
+</li>
+<li><p><strong>重要方法：</strong></p>
+<ul>
+<li><p>public final void <strong>setName</strong>(String name)</p>
+<p>//th.setName(“线程名”)，设置线程名称</p>
+</li>
+<li><p>public final String <strong>getName</strong>()</p>
+<p>//th.getName()，返回线程名称</p>
+</li>
+<li><p>public void <strong>run</strong>()</p>
+<p>//th.run()，Thread的子类应该重写该方法</p>
+</li>
+<li><p>public void <strong>start</strong>()</p>
+<p>//th.start()，使该线程开始执行，Java虚拟机调用该线程的run()方法</p>
+</li>
+<li><p>public static Thread <strong>currentThread</strong>()</p>
+<p>//Thread.currentThread()，返回当前正在执行的Thread对象</p>
+</li>
+<li><p>public final int <strong>getPriority</strong>()</p>
+<p>//th.getPriority()，返回线程对象的优先级</p>
+</li>
+<li><p>public final void <strong>setPriority</strong>(int newPriority)</p>
+<p>//th.setPriority()，更改线程的优先级</p>
+</li>
+<li><p>public static void <strong>sleep</strong>(long millis)</p>
+<p>//Thread.sleep(毫秒数)，在指定的毫秒数内让正在执行的线程休眠（暂停执行），此操作受系统计时器、调度精度等因素影响</p>
+</li>
+<li><p>public final void <strong>join</strong>()</p>
+<p>//th.join()，等待该线程终止</p>
+</li>
+<li><p>public static void <strong>yield</strong>()</p>
+<p>//Thread.yield()，暂停当前正在执行的线程对象，并执行其他线程</p>
+</li>
+<li><p>public final void <strong>setDaemon</strong>(boolean on)</p>
+<p>//th.setDaemon()，将该线程标记为守护线程/用户线程/后台线程。当正在运行的线程都是守护线程时，Java虚拟机退出。必须在启动线程前调用</p>
+</li>
+<li><p>public void <strong>interrupt</strong>()</p>
+<p>//th.interrupt()，中断线程。把线程的状态终止，并抛出一个InterruptedException</p>
+</li>
+<li><p>public final void <strong>stop</strong>()</p>
+<p>//th.stop()，已过时，强迫线程终止执行。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-4-线程调度-优先级"><a href="#10-4-线程调度-优先级" class="headerlink" title="10.4 线程调度/优先级"></a>10.4 线程调度/优先级</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>线程只有得到CPU的使用权，才可以执行指令。</p>
+<p>线程有两种调度模型：</p>
+<ol>
+<li><p>分时调度模型</p>
+<p>所有线程轮流获得CPU的使用权，平均分配每个线程占用CPU的时间片。</p>
+</li>
+<li><p>抢占式调度模型：</p>
+<p>优先让优先级高的线程使用CPU。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">如果线程的优先级相同，会随机选择一个。<br><br>优先级高的线程获得的CPU时间片会多一些。<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Java使用的是抢占式调度模型。</strong></p>
+</li>
+<li><p><strong>Java线程优先级：</strong></p>
+<p>线程默认优先级是：5。</p>
+<p>线程优先级的范围是：1~10。</p>
+<p>线程优先级高表示线程获取CPU时间片的几率高，调用次数越多将越能体现这一点，次数少会更多的表现出随机性。</p>
+</li>
+</ul>
+<h3 id="10-5-线程控制"><a href="#10-5-线程控制" class="headerlink" title="10.5 线程控制"></a>10.5 线程控制</h3><ul>
+<li><p><strong>线程休眠：</strong></p>
+<p>在线程的run()方法内静态调用sleep(long millis)方法，可将当前实例休眠指定的毫秒数。</p>
+</li>
+<li><p><strong>线程加入：</strong></p>
+<p>th.join()，将等待该线程终止才会去执行其他线程/执行后面的代码。</p>
+</li>
+<li><p><strong>线程礼让：</strong><br>在线程的run()方法内静态调用yield()方法，暂停当前正在执行的线程对象，并执行其他线程。</p>
+</li>
+<li><p><strong>后台线程/守护线程：</strong></p>
+<p>在启动线程前调用th.setDaemon(boolean on)方法，可以将该线程标记为守护线程/后台线程。</p>
+<p>当所有正在运行的线程都是守护线程时，Java虚拟机退出。</p>
+</li>
+<li><p><strong>线程终止：</strong></p>
+<p>th.interrupt()，把线程的状态终止，并抛出一个InterruptedException。</p>
+</li>
+</ul>
+<h3 id="10-6-线程生命周期"><a href="#10-6-线程生命周期" class="headerlink" title="10.6 线程生命周期"></a>10.6 线程生命周期</h3><ol>
+<li><p><strong>新建：</strong></p>
+<p>创建线程对象。</p>
+<p>调用start()方法可进入就绪状态。</p>
+</li>
+<li><p><strong>就绪：</strong></p>
+<p>有执行资格，没有执行权。</p>
+<p>若得到了CPU的执行权即进入运行状态。</p>
+</li>
+<li><p><strong>运行：</strong></p>
+<p>有执行资格，有执行权。</p>
+<p>若被别的线程得到了CPU执行权，则回到就绪状态。</p>
+<p>若运行了sleep()或wait()等方法，则进入阻塞状态。</p>
+<p>若run()方法执行结束或中断了线程，进入死亡状态。</p>
+</li>
+<li><p><strong>阻塞：</strong></p>
+<p>没有执行资格，没有执行权。</p>
+<p>若sleep()时间到或运行了notify()等方法，可恢复到就绪状态。</p>
+</li>
+<li><p><strong>死亡：</strong></p>
+<p>线程对象变成垃圾，等待被回收。</p>
+</li>
+</ol>
+<h3 id="10-7-线程安全问题-线程同步"><a href="#10-7-线程安全问题-线程同步" class="headerlink" title="10.7 线程安全问题/线程同步"></a>10.7 线程安全问题/线程同步</h3><ul>
+<li><p><strong>判断是否会出现线程安全问题：</strong></p>
+<ol>
+<li>是否多线程环境；</li>
+<li>是否有共享数据；</li>
+<li>是否有多条语句操作共享数据。</li>
+</ol>
+</li>
+<li><p><strong>解决方案（同步代码块）：</strong></p>
+<p>格式：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">synchronized</span>(对象)&#123;<br>    ...			<span class="hljs-comment">//需要同步的代码</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>小括号内所传的对象是重点，该对象相当于“锁”的功能，多个线程对象需要同一把锁（相同的对象）。</p>
+</li>
+<li><p><strong>同步的前提：</strong></p>
+<ol>
+<li>要有多个线程；</li>
+<li>多个线程使用的是同一个锁对象。</li>
+</ol>
+</li>
+<li><p><strong>同步的好处：</strong></p>
+<p>同步的出现解决了多线程的安全问题。</p>
+</li>
+<li><p><strong>同步的弊端：</strong></p>
+<ol>
+<li><p>当线程很多时，每个线程都会去判断同步上的锁。</p>
+<p>这将会耗费更多资源，降低程序运行效率。</p>
+</li>
+<li><p>容易产生死锁。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>相关问题：</strong></p>
+<ol>
+<li><p><strong>同步代码块的锁对象是什么？</strong></p>
+<p>是任意对象。</p>
+</li>
+<li><p><strong>同步方法的格式及锁对象问题：</strong></p>
+<p>同步方法的格式：</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>同步方法的锁对象是this。</p>
+</li>
+<li><p><strong>静态方法的锁对象是什么？</strong></p>
+<p>是类的字节码文件对象。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="10-8-Lock锁（JDK5）"><a href="#10-8-Lock锁（JDK5）" class="headerlink" title="10.8 Lock锁（JDK5）"></a>10.8 Lock锁（JDK5）</h3><ul>
+<li><p><strong>概述：</strong></p>
+<ul>
+<li>为了更清晰的表达如何加锁和释放锁</li>
+<li>java.util.concurrent.locks下的接口Lock，提供了比使用synchronized方法和语句可获得的更广泛的锁定操作。</li>
+<li>允许更灵活的结构。</li>
+</ul>
+</li>
+<li><p><strong>重要方法：</strong></p>
+<ul>
+<li>void <strong>lock</strong>()            //lock.lock()，获取锁<br>void <strong>unlock</strong>()            //lock.unlock()，释放锁</li>
+</ul>
+</li>
+<li><p><strong>常用实现类：</strong></p>
+<p>ReentrantLock</p>
+</li>
+</ul>
+<h3 id="10-9-线程死锁问题"><a href="#10-9-线程死锁问题" class="headerlink" title="10.9 线程死锁问题"></a>10.9 线程死锁问题</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>两个或两个以上的线程在争夺资源的过程中，发生的一种互相等待的现象。</p>
+</li>
+<li><p><strong>举例：</strong></p>
+<p>如下的程序在创建两个对象并分别传入0和1时，极有可能出现线程死锁现象。</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeadlockThread</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span></span>&#123;<br><br>    <span class="hljs-keyword">private</span> Object lockA = <span class="hljs-keyword">new</span> Object();<br>    <span class="hljs-keyword">private</span> Object lockB = <span class="hljs-keyword">new</span> Object();<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> x;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DeadlockThread</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.x = x;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span> <span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>            <span class="hljs-keyword">if</span> (x%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">synchronized</span> (lockA) &#123;<br>                    System.out.println(<span class="hljs-string">"已经进入lockA，正在等待lockB"</span>);<br>                    <span class="hljs-keyword">synchronized</span> (lockB) &#123;<br>                        System.out.println(<span class="hljs-string">"成功进入lockB"</span>)<br>                    &#125;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">synchronized</span> (lockB) &#123;<br>                    System.out.println(<span class="hljs-string">"已经进入lockB，正在等待lockA"</span>);<br>                    <span class="hljs-keyword">synchronized</span> (lockA) &#123;<br>                        System.out.println(<span class="hljs-string">"成功进入lockA"</span>)<br>                    &#125;<br>                &#125;<br>            &#125;<br>            x ++;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="10-10-等待唤醒机制"><a href="#10-10-等待唤醒机制" class="headerlink" title="10.10 等待唤醒机制"></a>10.10 等待唤醒机制</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>Object类中提供了多个等待和唤醒方法。</p>
+<p>这些方法定义在Object中的原因是，锁的对象可以是任意对象。</p>
+</li>
+<li><p><strong>方法（位于Object）：</strong></p>
+<ul>
+<li>public final void <strong>wait</strong>()            //lock.wait()，让当前线程等待<br>public final void <strong>notify</strong>()                //lock.notify()，唤醒在此对象监视器上等待的单个线程<br> public final void <strong>notifyAll</strong>()        //lock.notifyAll()，唤醒在此对象监视器上等待的所有线程</li>
+</ul>
+</li>
+<li><p><strong>注意事项：</strong></p>
+<ol>
+<li><strong>wait()和notify()等方法应该由锁对象调用；</strong></li>
+<li><strong>wait()和notify()等方法应该处于锁的包围中（拥有对象监视器）；</strong></li>
+<li><strong>调用wait()方法时将会放开当前锁。</strong></li>
+</ol>
+</li>
+</ul>
+<h3 id="10-11-线程组"><a href="#10-11-线程组" class="headerlink" title="10.11 线程组"></a>10.11 线程组</h3><ul>
+<li><p><strong>概述：</strong></p>
+<ul>
+<li>把多个线程合并到一起</li>
+<li>它可以对一批线程进行分类管理，Java允许程序直接对线程组进行控制。</li>
+<li>默认情况下，所有线程都属于主线程组（main）。</li>
+<li>通过Thread类的构造方法public Thread(ThreadGroup tg, Runnable target, String name)，可将Thread在创建时就加入某一线程组。</li>
+</ul>
+</li>
+<li><p><strong>重要构造方法：</strong></p>
+<p>public ThreadGroup(String name)</p>
+<p>//构建一个新线程组，名字为name</p>
+</li>
+</ul>
+<h3 id="10-12-线程池"><a href="#10-12-线程池" class="headerlink" title="10.12 线程池"></a>10.12 线程池</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>程序启动一个新线程的成本是比较高的，因为要涉及到与操作系统的交互。</p>
+<p>使用线程池可以很好地提高性能，尤其是需要创建大量生存期很短地线程时。</p>
+<p>线程池中每一个线程代码结束后，不会死亡，而是回到线程池中成为空闲状态，等待下一个对象来使用。</p>
+<p>此处将使用Executors类。</p>
+</li>
+<li><p><strong>固定大小的线程池newFixedThreadPool：</strong></p>
+<p>public static ExecutorService newFixedThreadPool(<strong>int nThreads</strong>)</p>
+<p>//Executors.newFixedThreadPool(线程数)，创建一个固定大小的线程池</p>
+<p><strong>使用举例：</strong></p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">ExecutorService pool = Executors.newFixedThreadPool(<span class="hljs-number">2</span>);<br>pool.submit(<span class="hljs-keyword">new</span> MyRunnable());<br>pool.submit(<span class="hljs-keyword">new</span> MyRunnable());<br>pool.shutdown();<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>其他线程池：</strong></p>
+<ul>
+<li><p>单任务线程池：</p>
+<p>public static ExecutorService <strong>newSingleThreadExecutor</strong>()</p>
+</li>
+<li><p>可变尺寸线程池：</p>
+<p>public static ExecutorService <strong>newCachedThreadPool</strong>()</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-13-定时器"><a href="#10-13-定时器" class="headerlink" title="10.13 定时器"></a>10.13 定时器</h3><ul>
+<li><p><strong>概述：</strong></p>
+<p>可以让我们在指定时间做某件事情，还可以重复做某件事情。</p>
+<p>主要依赖Timer和TimerTask这两个类。</p>
+</li>
+<li><p><strong>Timer定时器类：</strong></p>
+<p><strong>重要构造方法：</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">public Timer()<br></code></pre></td></tr></table></figure>
+<p><strong>重要方法：</strong></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined">public void **schedule**(TimerTask, Date time)			<br><br>//t.schedule(TimerTask, Date)，安排在指定时间执行指定任务<br><br>public void **schedule**(TimerTask, Date firstTime, long period)<br><br>//t.schedule(TimerTask, Date, period)，安排任务在指定时间开始固定延迟地执行<br><br>public void **schedule**(TimerTask task, long delay)<br><br>//t.schedule(TimerTask, delay)，安排在指定延迟后执行指定任务<br><br>public void **schedule**(TimerTask task, long delay, long period)<br><br>//t.schedule(TimerTask, delay, period)，安排任务在指定延迟后开始固定延迟地执行<br>public void **cancel**()<br><br>//t.cancel()，终止此计时器，并丢弃所有已安排的任务<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>TimerTask任务类：</strong></p>
+<p>抽象类，实现了Runnable。</p>
+<p>需要创建子类，并重写run()方法，run()方法中的内容就是要执行的任务。</p>
+</li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/28/行为型模式/" rel="next" title="行为型模式"><i class="fas fa-angle-left"></i><span class="nav-title">行为型模式</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/06/05/线程池和多线程工具类/" rel="prev" title="线程池和多线程工具类"><span class="nav-title">线程池和多线程工具类</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.png" alt="John Doe">
+  
+  <h1 class="author-name">John Doe</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">16</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">0</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">0</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#10-传统多线程"><span class="toc-text">10. 传统多线程</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-1-多线程的概述"><span class="toc-text">10.1 多线程的概述</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-2-多线程的实现"><span class="toc-text">10.2 多线程的实现</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-3-Thread类"><span class="toc-text">10.3 Thread类</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-4-线程调度-优先级"><span class="toc-text">10.4 线程调度/优先级</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-5-线程控制"><span class="toc-text">10.5 线程控制</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-6-线程生命周期"><span class="toc-text">10.6 线程生命周期</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-7-线程安全问题-线程同步"><span class="toc-text">10.7 线程安全问题/线程同步</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-8-Lock锁（JDK5）"><span class="toc-text">10.8 Lock锁（JDK5）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-9-线程死锁问题"><span class="toc-text">10.9 线程死锁问题</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-10-等待唤醒机制"><span class="toc-text">10.10 等待唤醒机制</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-11-线程组"><span class="toc-text">10.11 线程组</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-12-线程池"><span class="toc-text">10.12 线程池</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#10-13-定时器"><span class="toc-text">10.13 定时器</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="1021782580@qq.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/Yukinoon" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/2301607054?is_all=1" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">John Doe</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
